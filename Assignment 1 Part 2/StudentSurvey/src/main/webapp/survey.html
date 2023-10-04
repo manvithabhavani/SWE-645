@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Survey</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.1/dist/lux/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="survey.css">
+    <script>  (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    else {
+                        formSubmit();
+                    }
+                    form.classList.add('was-validated');
+                    //formSubmit();
+                }, false);
+            });
+        }, false);
+    })();</script>
+</head>
+<body>
+
+    <div class=" container text-center">
+        <div class="row">
+            <h3>Student Survey Form</h3>
+
+        </div>
+        <form id="myForm" class="needs-validation" novalidate>
+            <div class="row form-group">
+                <div class="col form-group">
+                    <label class="col-form-label mt-4" for="FirstName">First Name</label>
+                    <input type="text" class="form-control" placeholder="Enter your first name" id="FirstName" required>
+                    <div class="invalid-feedback">Enter your first name!!</div>
+                </div>
+                <div class="col form-group">
+                    <label class="col-form-label mt-4" for="LastName">Last Name</label>
+                        <input type="text" class="form-control" placeholder="Enter your last name" id="LastName" required>
+                        <div class="invalid-feedback">Enter your last name!!</div>
+                </div>
+
+            </div>
+            <div class="row form-group">
+                <div class="col form-group">
+                    <label class="col-form-label mt-4" for="PhoneNumber">Phone Number</label>
+                    <input type="phone" class="form-control" placeholder="Enter your conact number" id="PhoneNumber"
+                        required>
+                    <div class="invalid-feedback">Enter a valid mobile number!!</div>
+                </div>
+                <div class="col form-group">
+                    <label for="Email" class="col-form-label mt-4">Email address</label>
+                    <input type="email" class="form-control" id="Email" aria-describedby="emailHelp"
+                        placeholder="Enter email" required>
+                    <div class="invalid-feedback">Enter a valid email id!!</div>
+                </div>
+
+            </div>
+            <div class="row form-group">
+                <div class="col-8 form-group">
+                    <label class="col-form-label mt-4" for="StreetAddress">Street Address</label>
+                    <input type="text" class="form-control" placeholder="Enter your street address" id="StreetAddress" required>
+                    <div class="invalid-feedback">Enter your street address !!</div>
+    
+                </div>
+                
+                <div class="col-4 form-group">
+                    <label class="col-form-label mt-4" for="City">City</label>
+                    <input type="text" class="form-control" placeholder="City Name" id="City" required>
+                    <div class="invalid-feedback">Enter your city name  !!</div>
+                </div>
+            </div>
+            <div class="row form-group">
+                
+                <div class="col form-group">
+                    <label class="col-form-label mt-4" for="State">State</label>
+                    <input type="text" class="form-control" placeholder="State Name" id="State" required>
+                    <div class="invalid-feedback">Enter your state name  !!</div>
+                </div>
+                <div class="col form-group">
+                    <label class="col-form-label mt-4" for="Zip">ZIP Code</label>
+                    <input type="number" class="form-control" placeholder="Zip Code" id="Zip" required>
+                    <div class="invalid-feedback">Enter your zip   !!</div>
+                </div>
+                <div class="col form-group">
+                    <label class="col-form-label mt-4" for="dos">Date of Survey</label>
+                    <input type="date"  class="form-control" placeholder="Survey taken on" id="dos" required>
+                    <div class="invalid-feedback">Enter date when survey was taken  !!</div>
+                </div>
+
+            </div>
+            <div class="row form-group">
+                <legend class="mt-4">What do you like the most about the campus ?</legend>
+                <div class=" col form-check">
+                  <input class="form-check-input" type="checkbox" value="student" id="students">
+                  <label class="form-check-label" for="student">Students</label>
+                </div>
+                <div class=" col form-check">
+                  <input class="form-check-input" type="checkbox" value="location" id="location" >
+                  <label class="form-check-label" for="location">Location</label>
+                </div>
+                <div class=" col form-check">
+                    <input class="form-check-input" type="checkbox" value="campus" id="campus">
+                    <label class="form-check-label" for="campus">Campus</label>
+                  </div>
+                  <div class=" col form-check">
+                    <input class="form-check-input" type="checkbox" value="atmposphere" id="atmosphere" >
+                    <label class="form-check-label" for="atmosphere">Atmosphere</label>
+                  </div>
+                  <div class=" col form-check">
+                    <input class="form-check-input" type="checkbox" value="dorm" id="dorm">
+                    <label class="form-check-label" for="dorm">Dorm rooms</label>
+                  </div>
+                  <div class=" col form-check">
+                    <input class="form-check-input" type="checkbox" value="sports" id="sports" >
+                    <label class="form-check-label" for="sports">Sports</label>
+                  </div>
+            </div>
+            <div class="row form-group">
+                <legend class="mt-4">How did you become interested in this university ?</legend>
+                <div class=" col form-check">
+                  <input class="form-check-input box" type="radio" name="interested" value="friends" id="friends">
+                  <label class="form-check-label box" for="friends">Friends</label>
+                </div>
+                <div class=" col form-check">
+                  <input class="form-check-input" type="radio" name="interested" value="internet" id="internet" >
+                  <label class="form-check-label" for="internet">Internet</label>
+                </div>
+                <div class=" col form-check">
+                    <input class="form-check-input" type="radio" name="interested" value="television" id="television">
+                    <label class="form-check-label" for="television">Television</label>
+                  </div>
+                  <div class=" col form-check">
+                    <input class="form-check-input" type="radio" name="interested" value="Other" id="Other" >
+                    <label class="form-check-label" for="Other">Other</label>
+                  </div>
+                  
+            </div>
+            <div class="row form-group">
+                <div class="col form-group">
+                    <label class="col-form-label mt-4" for="recommend">How liekly are you to recommend this school to other prospective students ?</label>
+                </div>
+                <div class="col form-group">
+                    <select class="form-select mt-4" id="exampleDisabledSelect1" fdprocessedid="vyh0q6">
+                        <option>Very Likely</option>
+                        <option>Likely</option>
+                        <option>Neutral</option>
+                        <option>Unlikely</option>
+                        <option>Very Unlikely</option>
+                      </select>
+                </div>
+               
+            </div>
+            <div class="row form-group">
+                <div class="col form-group">
+                    <label class="col-form-label mt-4" for="raffle">Raffle Lucky Draw:</label><br>
+                </div>
+                <div class="col form-group">
+                    <input type="text" class="form-control mt-4" placeholder="2,34,53,32..." id="raffle" >
+                    <small id="raffleHelp" class="form-text text-muted">Enter at least ten comma separated numbers ranging from 1 through 100 in the Raffle field to win a free movie ticket. </small>
+
+                </div>
+               
+            </div>
+            <div class="row form-group">
+                <div class="col form-group">
+                    <label class="col-form-label mt-4" for="comments">Additional Comments :</label>
+                </div>
+                <div class="col form-group">
+                    <textarea class="form-control mt-4" placeholder="Enter any additional comments here" id="comments" rows="3"></textarea>
+                </div>
+               
+            </div>
+
+            <div class="row form-group mb-5">
+                <div class="col form-group mt-4">
+                    <button type="submit" class="btn btn-success" fdprocessedid="q9mz0x">Submit</button>
+
+                </div>
+                <div class="col form-group mt-4">
+                    <button type="reset" class="btn btn-danger" fdprocessedid="q9mz0x">Cancel</button>
+
+                </div>
+               
+            </div>
+
+
+            </div>
+
+        </form>
+    </div>
+
+    
+
+    </div>
+</body>
+</html>

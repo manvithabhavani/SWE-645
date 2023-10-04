@@ -1,0 +1,27 @@
+@charset "ISO-8859-1";
+body{
+    background-color: lightgray;
+}
+h3{
+    margin-top: 2%;
+    text-align: center;
+    font-weight: bolder;
+    background-color:blanchedalmond;
+}
+
+.form-control{
+    border-radius: 20px;
+}
+
+.form-select{
+    border-radius: 20px;
+}
+
+button{
+    border-radius: 20px;
+}
+
+label{
+    font-weight: bold;
+}
+
