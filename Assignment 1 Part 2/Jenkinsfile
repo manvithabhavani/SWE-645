@@ -10,7 +10,7 @@ pipeline{
       steps {
 	sh 'rm -rf *.var'
         sh 'jar -cvf StudentSurvey.war -C "Assignment 1 Part 2/StudentSurvey/src/main/webapp" .'      
-        sh 'echo $DOCKERHUB_CREDENTIALS_PSW |sudo -S docker build -t sagar21999/assignment2:latest -f "Assignment 1 Part 2/Dockerfile" .'
+        sh 'sudo docker build -t sagar21999/assignment2:latest -f "Assignment 1 Part 2/Dockerfile" .'
       }
     }
     stage('Login') {
