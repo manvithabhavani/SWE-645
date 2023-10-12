@@ -12,12 +12,12 @@ pipeline{
         sh 'jar -cvf StudentSurvey.war -C "Assignment 1 Part 2/StudentSurvey/src/main/webapp" .'     
 	//sh "docker login -u sagar21999 -p ${DOCKERHUB_CREDENTIALS}"
 	//def customImage = docker.build("sagar21999/assignment2:latest")
-        sh 'sudo docker build -t sagar21999/assignment2:latest -f "Assignment 1 Part 2/Dockerfile" .'
+        sh 'docker build -t sagar21999/assignment2:latest -f "Assignment 1 Part 2/Dockerfile" .'
       }
     }
     stage('Login') {
       steps {
-        sh 'echo $DOCKERHUB_CREDENTIALS_PSW |sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+        sh 'echo $DOCKERHUB_CREDENTIALS_PSW |docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
        }
     }
     stage("Push image to docker hub"){
