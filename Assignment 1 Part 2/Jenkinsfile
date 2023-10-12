@@ -22,7 +22,7 @@ pipeline{
     }
     stage("Push image to docker hub"){
       steps {
-        sh 'sudo docker push sagar21999/assignment2:latest'
+        sh 'docker push sagar21999/assignment2:latest'
       }
     }
         stage("deploying on k8")
@@ -36,7 +36,7 @@ pipeline{
  
   post {
 	  always {
-			sh 'sudo docker logout'
+			sh 'docker logout'
 		}
 	}    
 }
