@@ -9,15 +9,17 @@ pipeline{
     stage('Build') {
       steps {
 	sh 'rm -rf *.var'
-        sh 'jar -cvf StudentSurvey.war -C "Assignment 1 Part 2/StudentSurvey/src/main/webapp" .'      
-        sh 'docker build -t sagar21999/assignment2:latest -f "Assignment 1 Part 2/Dockerfile" .'
+        sh 'jar -cvf StudentSurvey.war -C "Assignment 1 Part 2/StudentSurvey/src/main/webapp" .'     
+	sh "docker login -u sagar21999 -p ${DOCKERHUB_CREDENTIALS}"
+	def customImage = docker.build("sagar21999/assignment2:latest")
+        // sh 'docker build -t sagar21999/assignment2:latest -f "Assignment 1 Part 2/Dockerfile" .'
       }
     }
-    stage('Login') {
-      steps {
-        sh 'echo $DOCKERHUB_CREDENTIALS_PSW |sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-       }
-    }
+  //  stage('Login') {
+    //  steps {
+      //  sh 'echo $DOCKERHUB_CREDENTIALS_PSW |sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+       //}
+    //}
     stage("Push image to docker hub"){
       steps {
         sh 'sudo docker push sagar21999/assignment2:latest'
